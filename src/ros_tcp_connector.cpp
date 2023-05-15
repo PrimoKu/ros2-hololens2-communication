@@ -50,7 +50,6 @@ namespace Ros2Unity {
     void TcpConnection::start() {
         std::cout << "Connection Start" << std::endl;
         boost::asio::async_read_until(socket_, buffer_, '\n',
-            // boost::asio::transfer_all(),
             boost::bind(
                 &TcpConnection::handle_receive, 
                 shared_from_this(),
@@ -88,6 +87,5 @@ namespace Ros2Unity {
         );
         
     }
-
     
 }

@@ -1,13 +1,10 @@
 #include <ros2_hololens2_communication/robot_subscriber.hpp>
-#include <ros2_hololens2_communication/robot_publisher.hpp>
-
 
 using std::placeholders::_1;
 
 namespace Ros2Unity {
 
     RobotSubscriber::RobotSubscriber(const std::string& name) : Node(name) {
-        // robot_subscriber = this->create_subscription<geometry_msgs::msg::Pose>(name, 10, std::bind(&RobotSubscriber::callback, this, _1));
         marker_sub = this->create_subscription<geometry_msgs::msg::Pose>("marker_pose", 10, std::bind(&RobotSubscriber::callback, this, _1));
         pick_sub = this->create_subscription<geometry_msgs::msg::Pose>("pick_pose", 10, std::bind(&RobotSubscriber::callback, this, _1));
         place_sub = this->create_subscription<geometry_msgs::msg::Pose>("place_pose", 10, std::bind(&RobotSubscriber::callback, this, _1));

@@ -1,9 +1,8 @@
 #include <ros2_hololens2_communication/robot_publisher.hpp>
 
 namespace Ros2Unity {
-    RobotPublisher::RobotPublisher(const std::string& name) : Node(name) {
 
-        // robot_publisher = this->create_publisher<geometry_msgs::msg::Pose>(name, 10);
+    RobotPublisher::RobotPublisher(const std::string& name) : Node(name) {
         marker_pub = this->create_publisher<geometry_msgs::msg::Pose>("marker_pose", 10);
         pick_pub = this->create_publisher<geometry_msgs::msg::Pose>("pick_pose", 10);
         place_pub = this->create_publisher<geometry_msgs::msg::Pose>("place_pose", 10);
