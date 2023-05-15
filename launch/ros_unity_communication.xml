@@ -1,0 +1,6 @@
+<launch>
+
+    <!-- <node pkg="ros2_hololens2_communication" exec="pub" name="pose_publisher"/> -->
+    <!-- <node pkg="ros2_hololens2_communication" exec="sub" name="pose_subscriber" launch-prefix="gnome-terminal - " output="screen"/> -->
+    <node pkg="ros2_hololens2_communication" exec="tcp" name="tcp_connector" output="screen"/> 
+</launch>
